@@ -4,7 +4,7 @@ from flask_restx import Namespace, Resource, abort
 from app.container import user_service
 from app.dao.models.user import UserSchema
 from app.servises.auth import get_email_from_header, change_the_password
-from decorators import auth_required
+from app.decorators import auth_required
 
 user_ns = Namespace('/users')
 
