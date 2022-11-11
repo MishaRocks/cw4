@@ -13,9 +13,7 @@ user_ns = Namespace('/users')
 class UserView(Resource):
     @auth_required
     def get(self):
-        """
-        returns data of certain user
-        """
+
         req_header = request.headers['Authorization']
 
         email = get_email_from_header(req_header)
@@ -29,9 +27,7 @@ class UserView(Resource):
 
     @auth_required
     def patch(self):
-        """
-        updates name, surname and fav_gen of certain user
-        """
+
         req_header = request.headers['Authorization']
 
         email = get_email_from_header(req_header)
@@ -53,9 +49,7 @@ class UserView(Resource):
 
 @user_ns.route('/password/')
 class UserPasswordView(Resource):
-    """
-    updates password of certain user
-    """
+
     @auth_required
     def put(self):
         password_1 = request.json.get('password_1')
